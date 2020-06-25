@@ -1,0 +1,166 @@
+<%- include("Partials/header4") %>
+<style>
+.pcard
+{
+    background-color: #f1f1f1;
+}
+
+.profile-card
+{
+    width: 50%;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+}
+
+.image-container
+{
+    position: relative;
+}
+
+.info
+{
+    color: #4b4fe2;
+    margin-right: 16px;
+}
+
+.main-container
+{
+    padding: 20px;
+}
+/* .list-bar
+{
+    background-color: #bdc9ea;
+    border-radius: 16px;
+} */
+.itemlist
+{
+    padding: 0.1em 16px;
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+    background-color: #D2D9DA;
+}
+#sex
+{
+  width: auto;
+}
+
+@media screen and (max-width: 720px)
+{
+.profile-card
+{
+  margin-right: 10px;
+  margin-left: 10%;
+  
+  height: 100%;
+  width: 100%;
+}
+#sex
+{
+  width: auto;
+}
+}
+
+</style>
+
+<br><br><br><br>
+<body class="pcard">
+   
+   
+    <form  action="/profile/<%= edit._id %>/edit" method="POST" enctype="multipart/form-data" >
+    <div class="profile-card">
+      <center><h1>Edit Profile</h1></center>
+        <div class="container image-container">
+          
+            <div class="main-container">
+              
+                    <div class="row" >
+                      
+                        <div class="col"><p>First name</p>
+                        <input type="text" class="form-control" placeholder="" value="<%= edit.Name %>" name="Name" required>
+                      </div>
+                     
+                        <div class="col"><p>Last name</p>
+                        <input type="text" class="form-control" placeholder="" value="<%= edit.Surename %>" name="Surename" required>
+                      </div>
+                    </div>
+                  
+            </div>
+            
+            <hr>
+    </div> 
+    <div class="main-container">
+        
+         
+          
+              <div class="row user">
+                <div class="col"><p>ID Card</p>
+                  <input type="text" class="form-control" placeholder="" value="<%= edit.IDCard %>" name="IDCard" required>
+                </div>
+                <div class="col"><p>Mobile Phone</p>
+                  <input type="text" class="form-control" placeholder="" value="<%= edit.Telephone %>" name="Telephone" required>
+                </div>
+              </div>
+            
+            <br>
+            
+            <div class="row">
+              <div class="col"><p>House Number</p>
+                <input type="text" class="form-control" placeholder="" value="<%= edit.Housenumber %>" name="Housenumber" required>
+              </div>
+              <div class="col"><p>Road</p>
+                <input type="text" class="form-control" placeholder="" value="<%= edit.Road %>" name="Road" required>
+              </div>
+            </div>
+         
+          <br>
+          
+            <div class="row">
+              <div class="col"><p>District</p>
+                <input type="text" class="form-control" placeholder="" value="<%= edit.Parish %>" name="Parish" required>
+              </div>
+              <div class="col"><p>City</p>
+                <input type="text" class="form-control" placeholder="" value="<%= edit.District %>" name="District" required>
+              </div>
+            </div>
+          
+          <br>
+          
+            <div class="row">
+              <div class="col"><p>Province</p>
+                <input type="text" class="form-control" placeholder="" value="<%= edit.Province %>" name="Province" required>
+              </div>
+              <div class="col"><p>Postalcode</p>
+                <input type="text" class="form-control" placeholder="" value="<%= edit.Postalcode %>" name="Postalcode" required>
+              </div>
+            </div>
+          
+          <br>
+        <p>เพศ</p>
+        <p><select class="form-control" id="sex"  value="<%= edit.Gender %>"  name="Gender" required >
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+        </p>
+
+        <hr>
+        <p>Change Photo</p>
+       
+            <div class="from-grop">
+                <input class="form-control" type="file" class="form-control" name="image" accept="image/*">
+              </div>
+              
+         </div>
+    
+    </div> 
+    <br>
+    <div class="inputBox">
+        <center><input type="submit" class="btn btn-dark" name="" value="Submit"></center>
+      </div>
+</div>
+</form>
+</body>
+
+<%- include("Partials/footer") %>
