@@ -176,7 +176,7 @@ router.post('/signup',function(req,res){
       })
   });
   
-  router.post('/profile/:id/edit',upload2.single('image'),function(req,res){
+  router.post('/profile/:id/edit',upload.single('image'),function(req,res){
 //     if(!req.file){
 //         console.log(req.file)
 //     let Name = req.body.Name
